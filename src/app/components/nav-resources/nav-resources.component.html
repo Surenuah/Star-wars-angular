@@ -1,0 +1,14 @@
+<div *ngIf="selectedPerson === false">
+  <nav class="flex justify-center mt-5 cursor-pointer">
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/people/1/')">People</p>
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/films/1/')">Films</p>
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/starships/1/')">Starships</p>
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/vehicles/1/')">Vehicles</p>
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/species/1/')">Species</p>
+    <p class="text-yellow-400 cursor-pointer mr-4" (click)="getHeroes('https://swapi.dev/api/planets/1/')">Planets</p>
+  </nav>
+</div>
+
+<div *ngIf="selectedPerson">
+  <app-resource-list [resources]="resources"></app-resource-list>
+</div>

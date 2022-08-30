@@ -1,0 +1,14 @@
+<div>
+  <ul>
+    <li *ngFor="let resource of resources">
+      <a
+        [queryParams]="{resource: resource.url.split('/')[4], id: resource.url.split('/')[5]}"
+        [routerLink]="[resource.url.split('/')[4] , resource.url.split('/')[5]]"
+      >
+        <span class="text-yellow-400 cursor-pointer">{{resource.name}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
