@@ -1,1 +1,6 @@
-<p>vehicles works!</p>
+<div class="flex flex-col" *ngIf="vehicles">
+  <span class="text-yellow-400">Name: {{ vehicles.name }}</span>
+  <span class="text-yellow-400">Max atmosphering speed: {{ vehicles.max_atmosphering_speed }}</span>
+  <span class="text-yellow-400">Model: {{ vehicles.model }}</span>
+  <span class="text-yellow-400">Passengers: {{ vehicles.passengers }}</span>
+</div>

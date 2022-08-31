@@ -1,1 +1,6 @@
-<p>species works!</p>
+<div class="flex flex-col" *ngIf="species">
+  <span class="text-yellow-400">Name: {{ species.name }}</span>
+  <span class="text-yellow-400">Eye Colors: {{ species.eye_colors }}</span>
+  <span class="text-yellow-400">Hair Colors: {{ species.hair_colors }}</span>
+  <span class="text-yellow-400">Language: {{ species.language }}</span>
+</div>

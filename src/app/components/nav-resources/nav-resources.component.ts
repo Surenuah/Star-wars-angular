@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ResourcesService} from "../../services/resources.service";
 import {People} from "../../../models/people";
-import {Planets} from "../../../models/planets";
-import {Films} from "../../../models/films";
-import {Species} from "../../../models/species";
-import {Starships} from "../../../models/starships";
-import {Vehicles} from "../../../models/vehicles";
 
 @Component({
   selector: 'app-nav-resources',
@@ -21,12 +16,11 @@ export class NavResourcesComponent implements OnInit {
   resources?: People[];
   selectedPerson = false;
 
-  getHeroes(url: string): void {
+  getCategory(url: string): void {
     this.selectedPerson = true;
     const resource = url.split("/")[4];
-    this.resourceService.getHeroes(resource).subscribe((resources: any) => {
+    this.resourceService.getCategory(resource).subscribe(resources => {
       this.resources = resources.results;
-      console.log(this.resources)
     });
   }
 

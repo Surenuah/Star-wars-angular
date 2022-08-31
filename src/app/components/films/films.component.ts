@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Films} from "../../../models/films";
+import {ResourcesService} from "../../services/resources.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-films',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmsComponent implements OnInit {
 
-  constructor() { }
+  films?: Films;
+
+  constructor(
+    private resourceService: ResourcesService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.getFilms();
+  }
+
+  getFilms(): void {
+    const id = Number(this.route.snapshot.paramMap.get("id"));
+    const resource = JSON.parse(decodeURIComponent(JSON.stringify(this.route.snapshot.queryParamMap.get("resource"))));
+    this.resourceService.getFilms(resource, id).subscribe(films => {
+      this.films = films;
+    });
   }
 
 }
