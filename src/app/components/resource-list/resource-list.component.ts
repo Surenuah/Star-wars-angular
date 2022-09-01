@@ -10,7 +10,8 @@ export class ResourceListComponent implements OnInit {
 
   @Input() resources?: People[];
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

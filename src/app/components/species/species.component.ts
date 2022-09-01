@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Species} from "../../../models/species";
 import {ResourcesService} from "../../services/resources.service";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-species',
@@ -14,7 +15,8 @@ export class SpeciesComponent implements OnInit {
 
   constructor(
     private resourceService: ResourcesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,10 @@ export class SpeciesComponent implements OnInit {
     this.resourceService.getSpecies(resource, id).subscribe(species => {
       this.species = species;
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

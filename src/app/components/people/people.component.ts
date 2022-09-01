@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ResourcesService} from "../../services/resources.service";
 import {ActivatedRoute} from "@angular/router";
 import {People} from "../../../models/people";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-people',
@@ -14,7 +15,8 @@ export class PeopleComponent implements OnInit {
 
   constructor(
     private resourceService: ResourcesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
   }
 
@@ -28,6 +30,10 @@ export class PeopleComponent implements OnInit {
     this.resourceService.getPeople(resource, id).subscribe(people => {
       this.people = people;
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

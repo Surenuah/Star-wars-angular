@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Films} from "../../../models/films";
 import {ResourcesService} from "../../services/resources.service";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-films',
@@ -14,7 +15,8 @@ export class FilmsComponent implements OnInit {
 
   constructor(
     private resourceService: ResourcesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,10 @@ export class FilmsComponent implements OnInit {
     this.resourceService.getFilms(resource, id).subscribe(films => {
       this.films = films;
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
