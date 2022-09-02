@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {People} from "../../../models/people";
+import {Location} from "@angular/common";
+import {ResourcesService} from "../../services/resources.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-resource-list',
@@ -8,11 +10,26 @@ import {People} from "../../../models/people";
 })
 export class ResourceListComponent implements OnInit {
 
-  @Input() resources?: People[];
+  @Input() resources?: any;
 
   constructor(
+    private resourceService: ResourcesService,
+    private location: Location,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.getCategory();
+  }
+
+  getCategory(): void {
+    const resource = JSON.parse(decodeURIComponent(JSON.stringify(this.route.snapshot.paramMap.get("resources"))));
+    this.resourceService.getCategory(resource).subscribe(resources => {
+      this.resources = resources.results;
+    })
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

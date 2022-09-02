@@ -5,10 +5,11 @@
         [queryParams]="{resource: resource.url.split('/')[4], id: resource.url.split('/')[5]}"
         [routerLink]="[resource.url.split('/')[4] , resource.url.split('/')[5]]"
       >
-        <span class="text-yellow-400 cursor-pointer">{{resource.name}}</span>
+        <span class="text-yellow-400 cursor-pointer">{{resource.name || resource.title}}</span>
       </a>
     </li>
   </ul>
+  <button class="text-yellow-400" (click)="goBack()">Go back</button>
 </div>
 
 <router-outlet></router-outlet>

@@ -14,17 +14,11 @@ export class NavResourcesComponent implements OnInit {
   ) { }
 
   resources?: People[];
-  selectedPerson = false;
-
-  getCategory(url: string): void {
-    this.selectedPerson = true;
-    const resource = url.split("/")[4];
-    this.resourceService.getCategory(resource).subscribe(resources => {
-      this.resources = resources.results;
-    });
-  }
 
   ngOnInit(): void {
+    this.resourceService.getResources().subscribe(res => {
+      this.resources = res;
+    });
   }
 
 }

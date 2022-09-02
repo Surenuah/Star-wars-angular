@@ -42,4 +42,8 @@ export class ResourcesService {
   getVehicles(resource: string, id: number): Observable<Vehicles> {
     return this.http.get<Vehicles>(`https://swapi.dev/api/${resource}/${id}`);
   }
+
+  getResources(): Observable<any> {
+    return this.http.get<any>('https://swapi.dev/api/');
+  }
 }

@@ -7,15 +7,17 @@ import {PlanetsComponent} from "./components/planets/planets.component";
 import {SpeciesComponent} from "./components/species/species.component";
 import {StarshipsComponent} from "./components/starships/starships.component";
 import {VehiclesComponent} from "./components/vehicles/vehicles.component";
+import {ResourceListComponent} from "./components/resource-list/resource-list.component";
 
 const routes: Routes = [
   { path: "", component: NavResourcesComponent, pathMatch: "full" },
-  { path: "people/:id", component: PeopleComponent },
-  { path: "films/:id", component: FilmsComponent },
-  { path: "planets/:id", component: PlanetsComponent },
-  { path: "species/:id", component: SpeciesComponent },
-  { path: "starships/:id", component: StarshipsComponent },
-  { path: "vehicles/:id", component: VehiclesComponent },
+  { path: "list/:resources", component: ResourceListComponent },
+  { path: "list/people/people/:id", component: PeopleComponent },
+  { path: "list/films/films/:id", component: FilmsComponent },
+  { path: "list/planets/planets/:id", component: PlanetsComponent },
+  { path: "list/species/species/:id", component: SpeciesComponent },
+  { path: "list/starships/starships/:id", component: StarshipsComponent },
+  { path: "list/vehicles/vehicles/:id", component: VehiclesComponent },
 ];
 
 @NgModule({
