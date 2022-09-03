@@ -1,6 +1,6 @@
 <div>
   <ul class="flex items-center justify-center">
-    <li class="mr-5" *ngFor="let resource of resources | keyvalue">
+    <li class="mr-5 mt-4" *ngFor="let resource of resources | keyvalue">
       <a routerLink="/list/{{resource.key}}">
         <span class="text-yellow-400 cursor-pointer">
         {{ resource.key }}

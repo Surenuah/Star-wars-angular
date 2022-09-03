@@ -12,6 +12,8 @@ import { PlanetsComponent } from './components/planets/planets.component';
 import { SpeciesComponent } from './components/species/species.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div class="flex flex-col" *ngIf="planets">
-  <span class="text-yellow-400">Name: {{ planets.name }}</span>
-  <span class="text-yellow-400">Climate: {{ planets.climate }}</span>
-  <span class="text-yellow-400">Diameter: {{ planets.diameter }}</span>
-  <span class="text-yellow-400">Orbital Period: {{ planets.orbital_period }}</span>
+  <p class="text-yellow-400">Name: <span class="text-fuchsia-600">{{ planets.name }}</span></p>
+  <p class="text-yellow-400">Climate: <span class="text-fuchsia-600">{{ planets.climate }}</span></p>
+  <p class="text-yellow-400">Diameter: <span class="text-fuchsia-600">{{ planets.diameter }}</span></p>
+  <p class="text-yellow-400">Orbital Period: <span class="text-fuchsia-600">{{ planets.orbital_period }}</span></p>
   <button class="text-yellow-400" (click)="goBack()">Go back</button>
 </div>

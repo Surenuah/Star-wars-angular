@@ -1,7 +1,7 @@
 <div class="flex flex-col" *ngIf="starships">
-  <span class="text-yellow-400">Name: {{ starships.name }}</span>
-  <span class="text-yellow-400">Manufacturer: {{ starships.manufacturer }}</span>
-  <span class="text-yellow-400">Model: {{ starships.model }}</span>
-  <span class="text-yellow-400">Length: {{ starships.length }}</span>
+  <p class="text-yellow-400">Name: <span class="text-teal-600">{{ starships.name }}</span></p>
+  <p class="text-yellow-400">Manufacturer: <span class="text-teal-600">{{ starships.manufacturer }}</span></p>
+  <p class="text-yellow-400">Model: <span class="text-teal-600">{{ starships.model }}</span></p>
+  <p class="text-yellow-400">Length: <span class="text-teal-600">{{ starships.length }}</span></p>
   <button class="text-yellow-400" (click)="goBack()">Go back</button>
 </div>

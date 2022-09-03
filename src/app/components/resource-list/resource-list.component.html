@@ -1,6 +1,6 @@
 <div>
-  <ul>
-    <li *ngFor="let resource of resources">
+  <ul class="flex flex-col items-center">
+    <li class="mt-5" *ngFor="let resource of resources">
       <a
         [queryParams]="{resource: resource.url.split('/')[4], id: resource.url.split('/')[5]}"
         [routerLink]="[resource.url.split('/')[4] , resource.url.split('/')[5]]"
@@ -9,7 +9,11 @@
       </a>
     </li>
   </ul>
-  <button class="text-yellow-400" (click)="goBack()">Go back</button>
+  <div>
+    <button (click)="goBack()" mat-raised-button>
+      <mat-icon class="text-yellow-400">subdirectory_arrow_left</mat-icon>
+    </button>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

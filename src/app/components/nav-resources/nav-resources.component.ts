@@ -20,5 +20,4 @@ export class NavResourcesComponent implements OnInit {
       this.resources = res;
     });
   }
-
 }

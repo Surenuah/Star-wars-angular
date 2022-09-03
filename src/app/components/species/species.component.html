@@ -1,7 +1,7 @@
 <div class="flex flex-col" *ngIf="species">
-  <span class="text-yellow-400">Name: {{ species.name }}</span>
-  <span class="text-yellow-400">Eye Colors: {{ species.eye_colors }}</span>
-  <span class="text-yellow-400">Hair Colors: {{ species.hair_colors }}</span>
-  <span class="text-yellow-400">Language: {{ species.language }}</span>
+  <p class="text-yellow-400">Name: <span class="text-green-600">{{ species.name }}</span></p>
+  <p class="text-yellow-400">Eye Colors: <span class="text-green-600">{{ species.eye_colors }}</span></p>
+  <p class="text-yellow-400">Hair Colors: <span class="text-green-600">{{ species.hair_colors }}</span></p>
+  <p class="text-yellow-400">Language: <span class="text-green-600">{{ species.language }}</span></p>
   <button class="text-yellow-400" (click)="goBack()">Go back</button>
 </div>

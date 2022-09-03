@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
 import {ResourcesService} from "../../services/resources.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-resource-list',
@@ -15,7 +15,8 @@ export class ResourceListComponent implements OnInit {
   constructor(
     private resourceService: ResourcesService,
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
